@@ -21,7 +21,7 @@ The goal of this coding challenge is improve the user experience of our app by *
 1. **have multiple pages in your app,**
 2. **add navigation to the different pages.**
 
-We'll take a look at how you can add multiple pages to your Xamarin app and how to navigation between the different pages. As we have been using Xamarin.Forms for the template app, we'll explain these concepts using Xamarin.Forms, although you're free to implement a native app too.
+We'll take a look at how you can add multiple pages to your Xamarin app and how to navigate between the different pages. As we have been using Xamarin.Forms for the template app, we'll explain these concepts using Xamarin.Forms, although you're free to implement a native app too.
 
 By the time we release the third challenge, we'll also publish the updated source code for the Xamarin Alliance template app.
 
@@ -38,11 +38,11 @@ For this challenge, we'll consider only two of them:
 
 For our Xamarin Alliance template app, we'll add a detail page that provides the details of a Star Wars character. This page will be called upon tapping the corresponding item in *ListView* on the main page.
 
-> **TIP:** you could also add a carousel page to allowing scrolling through the list of characters.
+> **TIP:** you could also add a carousel page to allow scrolling through the list of characters.
 
 ### <a name="hierarchicalnavigation"></a>Hierarchical navigation
 
-The *NavigationPage* class provides a hierarchival navigation experience where you can navigate through pages, both forwards and backwards. This class uses a stack (LIFO) of Page objects. To move to another page, you *push* a new page on the stack; when navigating backwards, you *pop* the current page from the stack and the new topmost page becomes the active page. It's recommended that the pages that are pushed on the navigation stack are *ContentPage* instances only.
+The *NavigationPage* class provides a hierarchical navigation experience where you can navigate through pages, both forwards and backwards. This class uses a stack (LIFO) of Page objects. To move to another page, you *push* a new page on the stack; when navigating backwards, you *pop* the current page from the stack and the new topmost page becomes the active page. It's recommended that the pages that are pushed on the navigation stack are *ContentPage* instances only.
 
 The first page on the navigation stack is called the *root page* of the application. This is accomplished as follows (Page1Xaml is of type *ContentPage*):
 ```csharp
@@ -70,7 +70,7 @@ async void OnPreviousPageButtonClicked (object sender, EventArgs e)
 }
 ```
 
-Note that you can push multiple pages onto the navigation stack before 'walking back the stack'. If you want to return straight to the root page of the stack, you can use the *Navigation.PopToRootAsync()' method.
+Note that you can push multiple pages onto the navigation stack before 'walking back the stack'. If you want to return straight to the root page of the stack, you can use the *Navigation.PopToRootAsync()* method.
 
 In our Xamarin Alliance template app, we need to navigate to the character detail page when tapping on an entry in the list of characters on the main page. As shown above, we'll first create a root *NavigationPage* and push our main page on the stack. When an item is tapped, we push a character detail *ContentPage* on the stack.
 
